@@ -1,6 +1,6 @@
-# baseURL = 'https://example.org/'
+# baseURL = 'https://blog.jonivirtanen.net/'
 languageCode = 'en-us'
-title = 'My Personal Blog'
+title = 'Joni Virtanen'
 enableEmoji = true
 theme = 'ficurinia'
 
@@ -8,14 +8,11 @@ summaryLength = 70  # number of words for article summaries
 
 [pagination]
     pagerSize = 5  # number of articles per page in the index
- 
-
 
 [params]
     author = "Joni Virtanen"
     description = "My little corner of the interwebs"  # this will be added as metadata
 
-   
     showtags = false
     posts = "posts"  # content directory where to find home page posts; default searches in "posts" and "post"
     showPostsLink = true  # show or hide the link to the simple post list

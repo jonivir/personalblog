@@ -2,8 +2,8 @@
 /public/
 /resources/_gen/
 /assets/jsconfig.json
-/content/testi/
-/content/musiikki/
+/content/testi
+/content/musiikki
 hugo_stats.json
 
 # Executable may be added to repository

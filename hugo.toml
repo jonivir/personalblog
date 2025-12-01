@@ -2,7 +2,7 @@
 languageCode = 'en-us'
 title = 'My Personal Blog'
 enableEmoji = true
-theme = 'ficurinia'
+theme = 'hugo-ficurinia'
 
 summaryLength = 70  # number of words for article summaries
 

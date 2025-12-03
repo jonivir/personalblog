@@ -6,6 +6,10 @@ norss: true
 ---
 
 #### Collection of random thoughts, ideas, finds and all other stuff that doesn't fit anywhere else.
+
+*2025-12-3*
+> Advent of code 3/12 done. Not easily, or with pretty or efficient code, but whats important, all code has been written by me and not AI. 
+
 *2025-12-1*
 > It's december (still surviving the Whamageddon! :muscle: ). Thinkin of participating in the [Advent of code](https://adventofcode.com/2025). It's not like I should bw studying or antyhing.
 

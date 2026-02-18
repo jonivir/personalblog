@@ -7,6 +7,9 @@ norss: true
 
 #### Collection of random thoughts, ideas, finds and all other stuff that doesn't fit anywhere else.
 
+*2026-02-18*
+> Been working with new simplified page for few days and finally got to publishing it today. Mainly I migrated the needed styles and layouts from the previous theme to the root of the project and simplified (read: removed bunch of stuff that didn't break anything) them. Also bigger update to [books](/books/) page where i created a bit more automated system to build the contents using json export from hardcover API. Bit easier to keep it updated than the previous fully manual markdown file.
+
 *2025-12-3*
 > Advent of code 3/12 done. Not easily, or with pretty or efficient code, but whats important, all code has been written by me and not AI. 
 

@@ -1,0 +1,51 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+{{ $books := where site.RegularPages "Section" "eq" "books" }}
+{{ $readpages := where $books "Params.status" "Read"}}
+{{ $reading := where $books "Params.status" "Currently reading"}}
+
+<h2>Currently reading</h2>
+{{ range $reading}}
+    <div class="sectionbookcard">
+            {{ with .Resources.GetMatch "cover.*" }}
+            <img src="{{ .RelPermalink }}" alt="{{ .Params.alt }}">
+            {{ end }}
+            <span>
+            <h3>{{ .Params.title }}</h3>
+            <p>{{ .Params.author }} </p>  
+            </span>  
+    </div>
+{{ end }}
+
+
+<h2>Read</h2>
+    {{ range $readpages.GroupByDate "January 2006" }}
+    <h3>{{ .Key }} </h3>
+        {{ range .Pages}}
+                <div class="booklistcard">
+                    <div class="img-container">
+                        {{ with .Resources.GetMatch "cover.*" }}
+                        <img src="{{ .RelPermalink }}" alt="{{ .Params.alt }}">
+                        {{ end }}
+                    </div>
+                    <div class="infocontainer">
+                        <div class="bookinfo">
+                            <h4 class="title">{{ .Params.title }}</h4>
+                            <p class="author">By: {{ .Params.author}}</p>
+                            {{ if .Params.series.seriesname }}
+                            <p class="series">{{ .Params.series.placeinseries }}/{{ .Params.series.serieslength }} in {{ .Params.series.seriesname }}</p>
+                            {{ end }}
+                        </div>
+                        <div class="review">
+                            <div class="Stars" style="--rating: {{ .Params.rating }};"></div>
+                            <p class="date">{{- partial "date.html" .Date -}}</p>
+                            
+                        </div>
+                    </div>
+                </div>
+
+        {{ end }}
+    {{ end }}
+
+{{ end }}

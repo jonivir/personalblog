@@ -4,6 +4,7 @@ tags:
   - blog
   - about
 date: 2025-11-28
+draft: false
 ---
 
 So I went and put up a website. 

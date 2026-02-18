@@ -1,0 +1,54 @@
+{{/* Get data. */}}
+{{ $data := dict }}
+{{ with try (resources.Get "data/books.json") }}
+  {{ with .Err }}
+    {{ errorf "Unable to get resource" }}
+  {{ else with .Value }}
+    {{ $data = . | transform.Unmarshal }}
+  {{ else }}
+    {{ errorf "Unable to get remote resource" }}
+  {{ end }}
+{{ end }}
+
+{{/* Add pages and page resources. */}}
+{{ range $data }}
+
+    {{/* Add page. */}}
+    {{ $content := dict "mediaType" "text/markdown" "value" .review }}
+    {{ $dates := dict "date" (time.AsTime .lastread) }}
+    {{ $title := .bookTitle }}
+    {{ $author := .bookAuthor }}
+    {{ $name := printf "%s - %s" $title $author }}
+    {{ $series := dict "seriesname" .seriesname "placeinseries" .placeinseries "serieslength" .serieslength }}
+    {{ $params := dict "author" .bookAuthor "title" .bookTitle "rating" .rating "name" $name "path" .bookTitle "series" $series "status" .status }}
+    {{ $page := dict
+        "content" $content
+        "dates" $dates
+        "kind" "page"
+        "params" $params
+        "path" .bookTitle
+        "title" .bookTitle 
+    }}
+    {{ $.AddPage $page }}
+
+    {{/* Add page resource. */}}
+    {{ $item := . }}
+    {{ with $url := $item.imageurl }}
+        {{ with try (resources.GetRemote $url) }}
+        {{ with .Err }}
+            {{ errorf "Unable to get remote resource %s: %s" $url . }}
+        {{ else with .Value }}
+            {{ $content := dict "mediaType" .MediaType.Type "value" .Content }}
+            {{ $params := dict "alt" $item.bookTitle }}
+            {{ $resource := dict
+            "content" $content
+            "params" $params
+            "path" (printf "%s/cover.%s" $item.bookTitle .MediaType.SubType)
+            }}
+            {{ $.AddResource $resource }}
+        {{ else }}
+            {{ errorf "Unable to get remote resource %s" $url }}
+        {{ end }}
+        {{ end }}
+    {{ end }}
+{{ end }}

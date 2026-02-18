@@ -1,10 +1,10 @@
 baseURL = 'https://blog.jonivirtanen.net/'
-languageCode = 'en-us'
+defaultContentLanguage = 'en'
+languageCode = 'en-US'
 title = 'Joni Virtanen'
 enableEmoji = true
-theme = 'ficurinia'
 
-summaryLength = 70  # number of words for article summaries
+summaryLength = 20  # number of words for article summaries
 
 [pagination]
     pagerSize = 5  # number of articles per page in the index
@@ -12,12 +12,7 @@ summaryLength = 70  # number of words for article summaries
 [params]
     author = "Joni Virtanen"
     description = "My little corner of the interwebs"  # this will be added as metadata
-
-    showtags = false
     posts = "posts"  # content directory where to find home page posts; default searches in "posts" and "post"
-    showPostsLink = true  # show or hide the link to the simple post list
-    extraContentDirs = [] # other content directories to render similarly to the home page
-    showcaseDir = "showcase"  # create a content directory that shows a special showcase section in the home page
 
     fontFamily = "JetBrains Mono"  # changes the font, default "JetBrains Mono"
     titleFontFamily = "JetBrains Mono"  # font used for titles and headings
@@ -30,17 +25,6 @@ summaryLength = 70  # number of words for article summaries
 
     contentWidth = "800px"  # maximum width of the site content, css syntax
 
-    # shows a specified single page as a home page, instead of the traditional articles list
-    # requires setting `homeSinglePage`
-    # goes well with extraContentDirs
-    showSinglePageAsHome = false
-    homeSinglePage = "/home"
-
-    paperCards = false
-
-    enableSearch = false  # enable search page
-    searchbarEverywhere = false  # if the searchbar should be shown in every page; requires enableSearch
-    searchMenuLink = false  # add a search link to the navigation menu; requires enableSearch
     mobileHamburgerNav = true  # alternative hamburger menu layout for the main nav menu when screen is small
 
     [taxonomies]

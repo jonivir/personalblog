@@ -1,0 +1,5 @@
+{{ $allPostsList := .AllPostsList }}
+{{ $postsList := $allPostsList }}
+{{ range $postsList.Limit 3 }}
+    {{- partial "article_card.html" . -}}
+{{ end }}

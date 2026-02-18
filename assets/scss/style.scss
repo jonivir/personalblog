@@ -179,6 +179,21 @@ a.unstyledLink {
     margin-right: auto;
 }
 
+.h-card {
+    display: flex;
+    flex-direction: row;
+    a {
+        border-bottom: none;
+        text-align: right;
+        color: var(--default_accent);
+        padding: 4px;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    
+}
+
 #content {
     @include limitWidth;
     min-height: 100vh;
@@ -187,14 +202,12 @@ a.unstyledLink {
 }
 
 footer {
+    width: 100%;
     position: absolute;
     bottom: 0;
-    margin: 16px;
     height: 2.5rem;
     color: var(--default_dim_fg);
-    a {
-        color: var(--default_dim_fg);
-    }
+
     hr {
         margin-top: (2 * $margin);
     }
@@ -276,7 +289,7 @@ blockquote {
     font-size: .9em;
 }
 
-#pageNavigation, .nerdlink, nav:not(#TableOfContents) {
+#pageNavigation, nav:not(#TableOfContents) {
     a {
         border-bottom: none;
         &:hover {
@@ -294,33 +307,6 @@ blockquote {
         // appropriately sized tap targets
         display: inline-block;
         padding: 6px;
-    }
-    &.nav-circles {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        align-items: center;
-        a, span {
-            margin: 5px;
-            text-align: center;
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            padding: unset;
-            border-radius: 100%;
-            transition: background-color .15s ease-in-out;
-            background-color: var(--default_hl_bg);
-            color: var(--default_fg);
-            box-shadow: $shadow;
-        }
-        span {
-            background-color: var(--default_accent);
-        }
-        a:hover {
-            background-color: var(--default_accent);
-        }
     }
 }
 
@@ -346,49 +332,6 @@ h6 {font-size: 0.7 * $base_font_size * $title_font_mult;}
     font-size: 1.2 * $base_font_size;
     margin: 5px;
     display: inline-block;
-}
-
-.nerdlink {
-    @extend .nerd;
-    color: var(--default_fg);
-    border-bottom: none;
-    position: relative;
-    width: 1em;
-    height: 1.2em;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    .pseudofont {
-        fill: var(--default_fg);
-        display: inline;
-        position: relative;
-        top: 1px;
-    }
-    span {
-        position: absolute;
-        top: 1.5em;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 2px;
-        border: 1px solid var(--default_stroke);
-        border-radius: 3px;
-        color: var(--default_fg);
-        display: none;
-        background-color: var(--default_bg);
-        z-index: 900;
-        text-align: center;
-    }
-    &:hover {
-        .pseudofont {
-            fill: var(--default_accent);
-        }
-        color: var(--default_accent);
-        text-decoration: none;
-        border-bottom: none;
-        span {
-            display: block;
-        }
-    }
 }
 
 .card {
@@ -571,55 +514,23 @@ header {
     @include limitWidth;
     padding: $margin;
     margin-bottom: $margin;
-    .rightOfLogo {
-        width: 100%;
-        .titleAndHamburger {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            justify-content: space-between;
-        }
-    }
+
     nav:not(#TableOfContents) {
-        font-size: .9em;
+        font-size: 1em;
         ul {
             li {
-                {{ if eq .Site.Params.menuStyle "buttons" }}
-                    margin: 5px 2px;
-                    margin-right: 5px;
-                    &:last-child {
-                        margin-right: none;
-                    }
-                    a {
-                        {{ if eq (site.Params.navtype | default "standard") "circles" }}
-                            @include roundButtonLike;
-                        {{ else }}
-                            font-family: $symbols_font, $main_font;
-                            background-color: var(--default_hl_bg);
-                            transition: background-color .15s ease-in-out;
-                            &:hover, &:active {
-                                background-color: var(--default_accent);
-                            }
-                        {{ end }}
-                        box-sizing: border-box;
-                        color: var(--default_fg);
-                        margin: 0;
-                        padding: #{$margin/2} $margin;
-                    }
-                {{ else }}
-                    border-right: 1px solid var(--default_accent);
-                    &:last-child {
-                        border-right: none;
-                    }
-                    a {
-                        padding: 2px $margin;
-                        color: var(--default_accent);
-                        &:hover {
-                            text-decoration: underline;
-                        }
-                    }
-                {{ end }}
+                border-right: 1px solid var(--default_accent);
+                &:last-child {
+                    border-right: none;
+            }
+            a {
+                padding: 2px $margin;
+                color: var(--default_accent);
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
             }
         }
     }

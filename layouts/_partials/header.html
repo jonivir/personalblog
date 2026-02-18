@@ -1,6 +1,6 @@
 <nav>
     <ul id="main-nav">
-        <li><a href="/">Home</a></li>
+        <li><a href="/" >Home</a></li>
         <li><a href="/posts/">Posts</a></li>
         {{ $pagesDir := .Site.Params.Pages | default (slice "pages") }}
         {{ $pagesList := where .Site.RegularPages "Section" "in" $pagesDir }}

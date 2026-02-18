@@ -1,4 +1,5 @@
-{{ $allPostsList := .AllPostsList }}
+{{ $postsDir := slice "posts" "post" }}
+{{ $allPostsList := where (where site.RegularPages "Section" "in" $postsDir) "Section" "!=" "" }}
 {{ $postsList := $allPostsList }}
 {{ range $postsList.Limit 3 }}
     {{- partial "article_card.html" . -}}

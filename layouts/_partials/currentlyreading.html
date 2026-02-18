@@ -1,0 +1,5 @@
+    {{ $books := where site.RegularPages "Section" "eq" "books" }}
+    {{ $reading := where $books "Params.status" "Currently reading"}}
+    {{ range $reading}}
+        {{- partial "book_card.html" . -}}
+    {{ end }}

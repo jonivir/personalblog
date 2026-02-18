@@ -1,8 +1,16 @@
 {{ define "main" }}
 
   {{ .Content }}
-    {{ $postsDir := .Site.Params.Posts | default (slice "posts" "post") }}
-    {{ $allPostsList := where (where site.RegularPages "Section" "in" $postsDir) "Section" "!=" "" }}
-    {{- partial "home_post_list.html" (dict "Ctx" . "AllPostsList" $allPostsList) -}}
+
+    <h2>Recent posts</h2>
+    {{- partial "home_post_list.html" -}}
+
+    <h2>Recent books</h2>
+    
+    <h3>Currently reading</h3>
+    {{- partial "currentlyreading.html" -}}
+
+    <h3>Latest reads</h3>
+    {{- partial "latest_reads.html" -}}
 
 {{ end }}

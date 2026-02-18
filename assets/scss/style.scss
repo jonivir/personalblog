@@ -675,13 +675,15 @@ a.buttonTag {
         font-size: 1 * $base_font_size * $title_font_mult;
     }
 
-    img {
-        width: 100%;
-        max-width: 200px;
-        padding-right: 16px;
-        object-fit: fill;
-    
+    .img-container {
+        padding-right: 8px;
+
+        img {
+            width: 100%;
+            max-width: 100px;
+        }
     }
+
 }
 
 

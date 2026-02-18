@@ -1,5 +1,5 @@
 ---
-title: Books
+title: DeprecatedBooks
 showDate: false
 ---
 

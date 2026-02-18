@@ -1,0 +1,30 @@
+{{ define "main" }}
+
+<div class="bookCard">
+    {{ with .Resources.GetMatch "cover.*" }}
+    <img src="{{ .RelPermalink }}" alt="{{ .Params.alt }}">
+    {{ end }}
+  <div>
+    <h1>{{ .Title }}</h1>
+    {{ with .GetTerms "tags" }}
+    <p>Tags:</p>
+    <ul>
+      {{ range . }}
+      <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+    <div class="Stars" style="--rating: {{ .Params.rating }};" aria-label="Rating of this product is 2.3 out of 5.">
+    </div>
+    <p>Kirjoittaja: {{ .Params.author }}</br>
+    Luettu: {{ .Date | time.Format ":date_long" }}</br>
+    {{ if .Params.series.seriesname }}
+      Sarja: {{ .Params.series.seriesname }} ({{ .Params.series.placeinseries }}/{{ .Params.series.serieslength }})
+    {{ end }}
+    </p>
+  </div>
+</div>
+
+
+{{ .Content }}
+{{ end }}

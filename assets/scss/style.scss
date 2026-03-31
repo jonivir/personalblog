@@ -549,6 +549,25 @@ a.buttonTag {
     cursor: pointer;
 }
 
+figure.contentimage {
+  display: inline-block;
+  inline-size: fit-content;
+  margin-inline: auto;
+    img {
+      max-width: 100%;
+    }
+    figcaption {
+      display: flex;
+      contain: inline-size;
+      font-size: $base_font_size * 0.9;
+      word-break: break-all;
+      a {
+        border-bottom: none;
+        
+      }
+    }
+}
+
 #fediInstanceDialog {
     display: none;
     position: fixed;

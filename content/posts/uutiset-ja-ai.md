@@ -22,7 +22,6 @@ Lisäksi itseäni häiritsee päätoimittajan kirjoituksessa myös se, että kie
 src="/images/Mastodon_Screenshot.png"
 alt="Kuvakaappaus Mastodon julkaisusta, jossa lukee englanniksi: There’s no way to put the genie back into the bottle, insist AI boosters about a product that the industry is spending more than a trillion dollars a year to keep out of the bottle."
 caption="<https://beige.party/@maxleibman/116316404180741899>"
-width="100%"
 class="contentimage">}}
 
 Päätoimittaja perustelee tekoälytyökalujen käyttöä myös sillä, että tiedotteiden määrä on lisääntynyt valtavasti (mm. tekoälyn vuoksi) ja niiden läpikäyminen vaatii paljon aikaa ja resursseja. Tilannetta ei varmasti helpota myöskään se että HS suunnitelmiensa mukaisesti aikoo [luopua STT:n käytöstä](https://www.hs.fi/suomi/art-2000011479388.html). Joissain tilanteissa tällainen "fight fire with fire" -tyyppinen ratkaisu on varmasti ihan toimiva, mutta se, että tekoälymoskaa pyritään korjaamaan uudella tekoälymoskalla kuulostaa vain typerältä. Onko journalismi tosiaan vajonnut niin alas, että nopeus menee faktojen edelle? Ajassa, jossa kaikenlainen dis- ja misinformaatio on valtava ongelma, on neutraali ja luotettava uutisointi äärimmäisen tärkeää. Valitettavasti tällaiset tapaukset kuitenkin nakertavat luottamusta ja vaikka HS ei vastaavaa virhettä enää tekisikään, tästä syntynyt pieni epäluottamus voi jäädä pitkiksi ajoiksi kalvamaan johonkin takaraivon perukoille.

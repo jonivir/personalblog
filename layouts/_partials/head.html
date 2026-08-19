@@ -25,8 +25,8 @@
   <link href="/symbols-nerd-font/symbols-nerd-font.css" rel="stylesheet" />
   <link href="/jetbrains-mono/jetbrains-mono.css" rel="stylesheet" />
   <link rel="webmention" href="https://webmention.io/blog.jonivirtanen.net/webmention" />
-  {{ $style := resources.Get "/scss/style.scss" | resources.ExecuteAsTemplate
-  "/scss/style.scss" . | css.Sass (dict "targetPath" "css/styles.css"
+  {{ $style := resources.Get "/stylev2.scss" | resources.ExecuteAsTemplate
+  "/stylev2.scss" . | css.Sass (dict "targetPath" "css/styles.css"
   "outputStyle" "compressed" "enableSourceMap" "true") | resources.Fingerprint
   "sha512" }}
   <link type="text/css" rel="stylesheet" href={{ $style.Permalink }} integrity="{{ $style.Data.Integrity }}" />
